@@ -4,9 +4,10 @@ services:
     env: python
     plan: free
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "python car_budget_app/main.py"
+    startCommand: "python main.py"
     envVars:
       - key: PYTHON_VERSION
         value: 3.10
-    workingDir: .
+    workingDir: car_budget_app
+
 
