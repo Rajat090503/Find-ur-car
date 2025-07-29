@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Car</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+  <style>
+  .cover-image {
+    background-image: url('{{ url_for("static", filename="images/cover.jpeg") }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Full screen height */
+    position: relative;
+  }
+
+  .cover-text {
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: dark overlay for better text visibility */
+    padding: 2rem;
+    border-radius: 10px;
+  }
+</style>
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="">Find ur Car</a>
+
+      <!-- Toggler for mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar content -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Search on the LEFT -->
+        <form class="d-flex me-auto" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+        <!-- Nav items on the RIGHT -->
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active " aria-current="page" href="{{ url_for('index') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  " aria-current="page" href="{{ url_for('about') }}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('price') }}">Quick Car Finder</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('contact') }}">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Cover Section -->
+  <section class="cover-image d-flex align-items-center justify-content-center text-white">
+    
+
+    <div class="p-6 p-m-6 mb-4 rounded bg-transparent text-start">
+      <div class="col-lg-6 px-0">
+        <h1 class="display-4 fw-bold fst-italic text-white">
+          Let’s explore the best car options for your needs!
+        </h1>
+      </div>
+    </div>
+  </section>
+  <div class="p-4 p-md-5 mb-4 rounded bg-dark text-light">
+    <div class="col-lg-6 px-0">
+      <h1 class="display-4 fst-italic">Drive Your Dream: Let’s Pick the Right Car for You </h1>
+      <p class="lead my-3">Discover the smartest way to choose a car that matches your budget, lifestyle, and driving
+        needs—all in one place.</p>
+
+    </div>
+  </div>
+
+  <div class="row mb-2 bg-dark text-light">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+
+          <h3 class="mb-0">🚗 1. Know Your Budget</h3>
+
+          <p class="card-text mb-auto">Before choosing a car, decide how much you're willing to spend. Include both the
+            upfront cost and long-term expenses like fuel, insurance, and maintenance. This helps you stay realistic and
+            avoid overspending..</p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="{{ url_for('static', filename='images/thumnail1.png') }}" alt="Car Image" lass="img-fluid rounded" style="max-width: 300px;"> />
+
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">🛣️ 2. Understand Your Needs</h3>
+
+          <p class="mb-auto">Think about why you need the car. Is it for city driving, long trips, family travel, or
+            daily office use? Choose based on seating capacity, luggage space, and comfort—don’t just go by looks.
+          </p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="{{ url_for('static', filename='images/thumnail2.png') }}" alt="Car Image" height="250" width="200" />
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="row mb-2  bg-dark text-light">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">⛽3. Choose the Right Fuel Type</h3>
+
+          <p class="card-text mb-auto">Pick between Petrol, Diesel, CNG, or Electric based on your daily usage and fuel
+            availability in your area. Electric cars are great for city use, while Diesel works well for long drives and
+            heavy use.</p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="{{ url_for('static', filename='images/thumbnail3.png') }}" alt="Car Image" height="250" width="200" />
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">🧪4. Compare Features & Safety</h3>
+
+          <p class="mb-auto">Look for important features like airbags, ABS, mileage, infotainment systems, and backup
+            cameras. Always choose a car with good safety ratings—even if it means spending a little more.
+          </p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="{{ url_for('static', filename='images/thumbnail4.png') }}" alt="Car Image" height="250" width="200" />
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <footer class="bg-dark text-white py-3 mt-5">
+    <div class="container text-center">
+      <p class="mb-1">© 2025 Find ur car</p>
+      <p>
+        <a href="{{ url_for('index') }}" class="text-white me-3">Home</a>
+        <a href="{{ url_for('about') }}" class="text-white me-3">About</a>
+        <a href="{{ url_for('contact') }}" class="text-white">Contact Us</a>
+      </p>
+    </div>
+  </footer>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
