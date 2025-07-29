@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import csv
 import os
+
 app = Flask(__name__)
 
 def load_car_data(file_path):
@@ -51,10 +52,6 @@ def price():
                 cars.append(car)
 
     return render_template("price.html", cars=cars, searched=searched)
-
-@app.route('/')
-def home():
-    return "Hello from Render!"
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))  # Use Render's PORT or default to 5000
